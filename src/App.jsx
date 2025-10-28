@@ -1,28 +1,25 @@
-import { useState } from 'react'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import ProductShowcase from "./components/ProductShowcase";
+import Footer from "./components/Footer";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="bg-white text-zinc-900 antialiased">
+      <Navbar />
+      <main>
+        <Hero />
+        <ProductShowcase />
+        <section id="craft" className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+          <div className="rounded-3xl border border-zinc-200 bg-white/70 p-10 text-center shadow-[0_1px_0_0_rgba(0,0,0,0.04)]">
+            <h3 className="text-2xl font-semibold tracking-tight">Craft without compromise</h3>
+            <p className="mx-auto mt-3 max-w-3xl text-zinc-600">
+              Each board is hand-assembled, tuned, and tested by our small team. We obsess over switch selection, plate materials, and stabilizer tuning to create a sound and feel you won’t forget.
+            </p>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
-
-export default App
